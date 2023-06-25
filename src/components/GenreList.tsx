@@ -5,9 +5,10 @@ import { Button } from "@chakra-ui/react";
 
 interface Props {
   setGenre: (genre: Genre) => void;
+  selectedGenre: Genre | null;
 }
 
-const GenreList = ({ setGenre }: Props) => {
+const GenreList = ({ selectedGenre, setGenre }: Props) => {
   const { data, error, isLoading } = useGenres();
 
   if (error) return null;
@@ -25,6 +26,7 @@ const GenreList = ({ setGenre }: Props) => {
               src={cropImageURL(genre.image_background)}
             ></Image>
             <Button
+              fontWeight={genre === selectedGenre ? "bolder" : "normal"}
               onClick={() => setGenre(genre)}
               variant="link"
               fontSize="lg"
