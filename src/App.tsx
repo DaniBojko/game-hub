@@ -7,6 +7,7 @@ import { Genre } from "./hooks/useGenres";
 import PlatformSelector from "./components/PlatformSelector";
 import { Platform } from "./hooks/usePlatforms";
 import SortSelector from "./components/SortSelector";
+import DynamicHeading from "./components/DynamicHeading";
 
 export interface QuerySelector {
   genre: Genre | null;
@@ -39,6 +40,7 @@ function App() {
         </GridItem>
       </Show>
       <GridItem area="main" paddingX={10}>
+        <DynamicHeading heading={gameQuery}></DynamicHeading>
         <HStack>
           <PlatformSelector
             setPlatform={(platform) => setGameQuery({ ...gameQuery, platform })}
