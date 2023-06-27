@@ -23,6 +23,7 @@ const useGames = (querySelector: QuerySelector) =>
         genres: querySelector.genre?.id,
         parent_platforms: querySelector.platform?.id,
         ordering: querySelector.sortOrder,
+        search: querySelector.search,
       },
     },
     [querySelector]
