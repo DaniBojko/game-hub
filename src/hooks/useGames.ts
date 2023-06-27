@@ -1,5 +1,5 @@
+import { QuerySelector } from "../App";
 import useData from "./useData";
-import { Genre } from "./useGenres";
 
 export interface Platform {
   id: number;
@@ -15,16 +15,16 @@ export interface Game {
   metacritic: number;
 }
 
-const useGames = (genre: Genre | null, platform: Platform | null) =>
+const useGames = (querySelector: QuerySelector) =>
   useData<Game>(
     "/games",
     {
       params: {
-        genres: genre?.id,
-        parent_platforms: platform?.id,
+        genres: querySelector.genre?.id,
+        parent_platforms: querySelector.platform?.id,
       },
     },
-    [genre?.id, platform?.id]
+    [querySelector]
   );
 
 export default useGames;
