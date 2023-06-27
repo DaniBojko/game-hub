@@ -17,7 +17,7 @@ const GameGrid = ({ querySelector }: Props) => {
       {error && <p>{error}</p>}
       <SimpleGrid
         columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
-        padding={10}
+        paddingY={5}
         spacing={5}
       >
         {isLoading
