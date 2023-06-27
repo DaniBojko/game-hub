@@ -1,7 +1,9 @@
+import NoImage from "../assets/no-image-placeholder-6f3882e0.webp";
+
 const cropImageURL = (url: string) => {
   const target = "media/";
 
-  if (!url) return;
+  if (!url) return NoImage;
 
   const index = url.indexOf(target) + 6; // + target.length;
 
